@@ -91,7 +91,7 @@ deployCoop coopPlutus aaWallet atLeastAaQ aaQToMint = do
       (mintAaTrx, aaAc) = mkMintOneShotTrx self aaWallet aaOut mkOneShotMp aaQToMint
       (mintCoopTrx, coopAc) = mkMintOneShotTrx self self coopOut mkOneShotMp 1
 
-  submitTrx @Void (mintAaTrx <> mintCoopTrx)
+--  submitTrx @Void (mintAaTrx <> mintCoopTrx)
   logI $ printf "Created the $COOP instance token %s and sent it to God Wallet %s" (show coopAc) (show self)
   logI $ printf "Created %d $AA (Authentication Authority) tokens %s and sent them to AA Wallet %s" atLeastAaQ (show aaAc) (show aaWallet)
 
